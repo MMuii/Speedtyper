@@ -1,0 +1,398 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Speedtyper</title>
+    <meta name="description" content="">
+    <meta name="mmui" content="SitePoint">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="start">
+        <div class="menu_container">
+            <div class="menu_container--time-settings">
+                <div class="menu_header">Length</div>
+                <div class="menu_btn menu_btn--length menu_btn-selected" data-length="60">1 minute</div>
+                <div class="menu_btn menu_btn--length" data-length="180">3 minutes</div>
+                <div class="menu_btn menu_btn--length" data-length="300">5 minutes</div>
+                <div class="menu_header">Wordset</div>
+                <div class="menu_btn menu_btn--wordset menu_btn-selected" data-wordset="random">Random</div>
+                <div class="menu_btn menu_btn--wordset" data-wordset="leftHand">Only left hand</div>
+            </div>
+            <div class="menu_container--words-settings"></div>
+        </div>
+        <div class="laptop_container">
+            <div class="screen_container--outer">
+                <div class="screen_container--info">
+                    <div class="screen_info screen_info--time">Time: 60s</div>
+                    <div class="screen_info screen_info--accuracy">Accuracy: 100%</div>
+                    <div class="screen_info screen_info--wpm">WPM: 0</div>
+                    <div class="screen_info screen_info--restart restartBtn">Restart<img src="imgs/restart-b.png" alt="restart icon" class="screen_info--restart-icon"></div>
+                </div>
+                <div class="test-prompter">
+                    <div class="test-prompter_container">
+                        <div class="test-prompter_container--left"></div>
+                        <div class="writing-line"></div>
+                        <div class="test-prompter_container--right"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="keyboard_container">
+                <div class="keyboard_container_row">
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--backtick charCode--192">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--backtick">
+                            <div class="keyboard_btn keyboard_btn--backtick keyboard_btn">`</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--1 charCode--49">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--1">
+                            <div class="keyboard_btn keyboard_btn--1">1</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--2 charCode--50">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--2">
+                            <div class="keyboard_btn keyboard_btn--2">2</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--3 charCode--51">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--3">
+                            <div class="keyboard_btn keyboard_btn--3">3</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--4 charCode--52">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--4">
+                            <div class="keyboard_btn keyboard_btn--4">4</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--5 charCode--53">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--5">
+                            <div class="keyboard_btn keyboard_btn--5">5</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--6 charCode--54">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--6">
+                            <div class="keyboard_btn keyboard_btn--6">6</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--7 charCode--55">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--7">
+                            <div class="keyboard_btn keyboard_btn--7">7</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--8 charCode--56">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--8">
+                            <div class="keyboard_btn keyboard_btn--8">8</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--9 charCode--57">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--9">
+                            <div class="keyboard_btn keyboard_btn--9">9</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--0 charCode--48">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--0">
+                            <div class="keyboard_btn keyboard_btn--0">0</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--minus charCode--189">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--minus">
+                            <div class="keyboard_btn keyboard_btn--minus">-</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--equal charCode--187">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--equal">
+                            <div class="keyboard_btn keyboard_btn--equal">=</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--backspace charCode--8">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--backspace">
+                            <div class="keyboard_btn keyboard_btn--backspace">backspace</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="keyboard_container_row">
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--tab charCode--9">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--tab">
+                            <div class="keyboard_btn keyboard_btn--tab">tab</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--q charCode--81">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--q">
+                            <div class="keyboard_btn keyboard_btn--q">q</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--w charCode--87">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--w">
+                            <div class="keyboard_btn keyboard_btn--w">w</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--e charCode--69">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--e">
+                            <div class="keyboard_btn keyboard_btn--e">e</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--r charCode--82">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--r">
+                            <div class="keyboard_btn keyboard_btn--r">r</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--t charCode--84">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--t">
+                            <div class="keyboard_btn keyboard_btn--t">t</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--y charCode--89">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--y">
+                            <div class="keyboard_btn keyboard_btn--y">y</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--u charCode--85">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--u">
+                            <div class="keyboard_btn keyboard_btn--u">u</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--i charCode--73">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--i">
+                            <div class="keyboard_btn keyboard_btn--i">i</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--o charCode--79">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--o">
+                            <div class="keyboard_btn keyboard_btn--o">o</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--p charCode--80">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--p">
+                            <div class="keyboard_btn keyboard_btn--p">p</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--sqrBracketLeft charCode--219">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--sqrBracketLeft">
+                            <div class="keyboard_btn keyboard_btn--sqrBracketLeft">[</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--sqrBracketRight charCode--221">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--sqrBracketRight">
+                            <div class="keyboard_btn keyboard_btn--sqrBracketRight">]</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--backslash charCode--220">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--backslash">
+                            <div class="keyboard_btn keyboard_btn--backslash">\</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="keyboard_container_row">
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--capslock charCode--20">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--capslock">
+                            <div class="keyboard_btn keyboard_btn--capslock">caps lock</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--a charCode--65">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--a">
+                            <div class="keyboard_btn keyboard_btn--a">a</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--s charCode--83">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--s">
+                            <div class="keyboard_btn keyboard_btn--s">s</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--d charCode--68">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--d">
+                            <div class="keyboard_btn keyboard_btn--d">d</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--f charCode--70">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--f">
+                            <div class="keyboard_btn keyboard_btn--f">f</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--g charCode--71">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--g">
+                            <div class="keyboard_btn keyboard_btn--g">g</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--h charCode--72">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--h">
+                            <div class="keyboard_btn keyboard_btn--h">h</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--j charCode--74">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--j">
+                            <div class="keyboard_btn keyboard_btn--j">j</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--k charCode--75">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--k">
+                            <div class="keyboard_btn keyboard_btn--k">k</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--l charCode--76">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--l">
+                            <div class="keyboard_btn keyboard_btn--l">l</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--semicolon charCode--186">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--semicolon">
+                            <div class="keyboard_btn keyboard_btn--semicolon">;</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--apostrophe charCode--222">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--apostrophe">
+                            <div class="keyboard_btn keyboard_btn--apostrophe">'</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--enter charCode--13">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--enter">
+                            <div class="keyboard_btn keyboard_btn--enter">enter</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="keyboard_container_row">
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--shiftLeft charCode--16">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--shiftLeft">
+                            <div class="keyboard_btn keyboard_btn--shiftLeft">shift</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--z charCode--90">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--z">
+                            <div class="keyboard_btn keyboard_btn--z">z</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--x charCode--88">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--x">
+                            <div class="keyboard_btn keyboard_btn--x">x</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--c charCode--67">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--c">
+                            <div class="keyboard_btn keyboard_btn--c">c</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--v charCode--86">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--v">
+                            <div class="keyboard_btn keyboard_btn--v">v</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--b charCode--66">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--b">
+                            <div class="keyboard_btn keyboard_btn--b">b</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--n charCode--78">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--n">
+                            <div class="keyboard_btn keyboard_btn--n">n</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--m charCode--77">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--m">
+                            <div class="keyboard_btn keyboard_btn--m">m</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--colon charCode--188">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--colon">
+                            <div class="keyboard_btn keyboard_btn--colon">,</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--dot charCode--190">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--dot">
+                            <div class="keyboard_btn keyboard_btn--dot">.</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--slash charCode--191">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--slash">
+                            <div class="keyboard_btn keyboard_btn--slash">/</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--shiftRight charCode--16">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--shiftRight">
+                            <div class="keyboard_btn keyboard_btn--shiftRight">shift</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="keyboard_container_row">
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--ctrlLeft charCode--17">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--ctrlLeft">
+                            <div class="keyboard_btn keyboard_btn--ctrlLeft">ctrl</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--fn">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--fn">
+                            <div class="keyboard_btn keyboard_btn--fn">fn</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--windows charCode--91">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--windows">
+                            <div class="keyboard_btn keyboard_btn--windows"><img src="imgs/win.png" alt="" class="keyboard_btn--windows-icon"></div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--altLeft charCode--18">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--altLeft">
+                            <div class="keyboard_btn keyboard_btn--altLeft">alt</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--space charCode--32">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--space">
+                            <div class="keyboard_btn keyboard_btn--space"></div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--altRight charCode--18">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--altRight">
+                            <div class="keyboard_btn keyboard_btn--altRight">alt</div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--task">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--task">
+                            <div class="keyboard_btn keyboard_btn--task"><img src="imgs/menu.png" alt="" class="keyboard_btn--task-icon"></div>
+                        </div>
+                    </div>
+                    <div class="keyboard_btn_container keyboard_btn_container-outer keyboard_btn_container-outer--ctrlRight charCode--17">
+                        <div class="keyboard_btn_container keyboard_btn_container-inner keyboard_btn_container-inner--ctrlRight">
+                            <div class="keyboard_btn keyboard_btn--ctrlRight">ctrl</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hand_container hand_container--1">
+                        <div class="hand_fingers">
+                            <div class="hand_finger hand_finger--1"></div>
+                            <div class="hand_finger hand_finger--2"></div>
+                            <div class="hand_finger hand_finger--3"></div>
+                            <div class="hand_finger hand_finger--4"></div>
+                            <div class="hand_finger hand_finger--5"></div>
+                        </div>
+                        <div class="hand_palm">
+                        </div>
+                </div>
+            
+                <div class="hand_container hand_container--2">
+                    <div class="hand_fingers">
+                        <div class="hand_finger hand_finger--6"></div>
+                        <div class="hand_finger hand_finger--7"></div>
+                        <div class="hand_finger hand_finger--8"></div>
+                        <div class="hand_finger hand_finger--9"></div>
+                        <div class="hand_finger hand_finger--10"></div>
+                    </div>
+                    <div class="hand_palm">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="results_container">
+        <div class="results_header">Results</div>
+        <div class="results_result">Words per minute: <span class="results_number results_number--wpm">40</span></div>
+        <div class="results_result">Characters per minute: <span class="results_number results_number--cpm">40</span></div>
+        <div class="results_result">Accuracy: <span class="results_number results_number--accuracy">40</span>%</div>
+        <div class="results_restart restartBtn">Restart <img src="imgs/restart.png" alt="restart icon" class="results_restart-icon"></div>
+    </div>
+<script type="text/javascript" src="js/bundle.js"></script></body>
+</html>
